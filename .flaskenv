@@ -1,2 +1,2 @@
 FLASK_ENV=development
-FLASK_APP=flask_youtube
+FLASK_APP=assignment-youtube-flask
