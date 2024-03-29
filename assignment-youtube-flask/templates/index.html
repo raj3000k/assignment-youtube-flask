@@ -1,34 +1,33 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Search YouTube</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Search YouTube</title>
 
-    <!-- Bootstrap core CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for('static', filename='album.css') }}" rel="stylesheet">
-  </head>
-  <body>
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='album.css') }}" rel="stylesheet">
+</head>
+<body>
 
 <main role="main">
 
@@ -37,13 +36,21 @@
       <h1 class="jumbotron-heading">Search YouTube</h1>
       <p class="lead text-muted">Get the top nine results on YouTube for your query!</p>
       <form method="POST">
-      <div class="input-group mb-3">
-        <input type="text" name="query" class="form-control">
-      </div>
-      <p>
-        <button type="submit" name="submit" value="search" class="btn btn-primary my-2">YouTube Search</button>
-        <button type="submit" name="submit" value="lucky" class="btn btn-secondary my-2">I'm Feeling Lucky</button>
-      </p>
+        <div class="input-group mb-3">
+          <input type="text" name="query" class="form-control">
+          <div class="input-group-append">
+            <select class="custom-select" name="filter">
+              <option value="" selected>Filter by...</option>
+              <option value="publishedAt">Date</option>
+              <option value="viewCount">Views</option>
+              <option value="likeCount">Rating</option>
+            </select>
+          </div>
+        </div>
+        <p>
+          <button type="submit" name="submit" value="search" class="btn btn-primary my-2">YouTube Search</button>
+          <button type="submit" name="submit" value="lucky" class="btn btn-secondary my-2">I'm Feeling Lucky</button>
+        </p>
       </form>
     </div>
   </section>
