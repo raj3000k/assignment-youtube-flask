@@ -22,7 +22,7 @@ def index():
             'key' : current_app.config['YOUTUBE_API_KEY'],
             'q' : request.form.get('query'),
             'part' : 'snippet',
-            'maxResults' : 9,
+            'maxResults' : 8,
             'type' : 'video'
         }
 
